@@ -17,14 +17,17 @@ else
             echo "Found background" $file
             read -p "Confirm (y/n)?" choice
             case $choice in
-                [Nn][Oo][Nn])
+                [Nn])
                     echo "Continue without customizering the wallpaper"
                     ;;
-                [yY][eE][sS][yY][])
+                [yY] | "")
                     echo "Customizing your background"
                     for folder in ${BACKGROUND_OPTION[@]}; do
                         cp -f $IMG_READ_PATH$file $MOD_IMG_PATH$folder"/background-tela.jpg"
                     done
+                    ;;
+                *)
+                    echo "None"
                     ;;
             esac
 
@@ -33,4 +36,4 @@ else
     done
 fi
 
-sudo ./install.sh $@
+# sudo ./install.sh $@
