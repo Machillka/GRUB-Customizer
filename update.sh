@@ -36,4 +36,4 @@ else
     done
 fi
 
-# sudo ./install.sh $@
+sudo ./install.sh $@
